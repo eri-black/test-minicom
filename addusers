@@ -1,0 +1,8 @@
+#!/bin/bash
+
+newusers /var/run/sshd/acc.txt
+chown root:root /run/sshd
+chmod 711 /run/sshd
+service ssh restart
+chmod ugo+rwx /dev/ttyUSB*
+tail -f /dev/null

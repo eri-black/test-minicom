@@ -1,0 +1,18 @@
+version: "3" 
+services:
+  minicom_test:
+    build: .
+#    image: test_minicom
+    ports:
+      - 2222:2222
+    volumes:
+      - /home/vika/docker-project:/var/run/sshd
+    devices:
+      - /dev/ttyUSB0:/dev/ttyUSB0
+      - /dev/ttyUSB1:/dev/ttyUSB1
+#      - /dev/ttyUSB2:/dev/ttyUSB2
+#      - /dev/ttyUSB3:/dev/ttyUSB3
+    command: 
+      - /var/run/sshd/addusers
+    network_mode: host
+
