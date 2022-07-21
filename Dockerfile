@@ -1,6 +1,6 @@
 FROM ubuntu:18.04
 
-RUN apt update && apt-get install -y openssh-server && apt-get install -y telnetd
+RUN apt update && apt-get install -y openssh-server && apt-get install -y makepasswd
 RUN mkdir /var/run/sshd   
 RUN sed -i 's/#Port 22/Port 2222/' /etc/ssh/sshd_config
 RUN sed -i 's/#PasswordAuthentication yes/PasswordAuthentication yes/' /etc/ssh/sshd_config
