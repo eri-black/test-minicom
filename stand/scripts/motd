@@ -1,0 +1,11 @@
+
+
+
+
+
+
+
+-------------------------------------------------------------------------------------
+Welcome to the training stand! To connect to the MES run "minicom -D /dev/ttyUSB*", 
+* - number of COM-port (you can get it by running "ls /dev/ttyUSB*").
+-------------------------------------------------------------------------------------

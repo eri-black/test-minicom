@@ -2,29 +2,31 @@ version: "3"
 services:
   minicom_test1:
     build: .
-    hostname: docker1
+    container_name: stand1
+    hostname: stand1
     ports:
-      - 2222:2222
+      - "2222:22"
     volumes:
-      - /home/vika/docker-project:/var/run/sshd
+      - ./stand:/opt/stand
     devices:
       - /dev/ttyUSB0:/dev/ttyUSB0
 #      - /dev/ttyUSB1:/dev/ttyUSB1
 #      - /dev/ttyUSB2:/dev/ttyUSB2
 #      - /dev/ttyUSB3:/dev/ttyUSB3
     command: 
-      - /var/run/sshd/addusers
+      - /opt/stand/scripts/start.sh
   minicom_test2:
     build: .
-    hostname: docker2
+    container_name: stand2
+    hostname: stand2
     ports:
-      - 2223:2222
+      - "2223:22"
     volumes:
-      - /home/vika/docker-project:/var/run/sshd
+      - ./stand:/opt/stand
     devices:
 #      - /dev/ttyUSB0:/dev/ttyUSB0
       - /dev/ttyUSB1:/dev/ttyUSB1
 #      - /dev/ttyUSB2:/dev/ttyUSB2
 #      - /dev/ttyUSB3:/dev/ttyUSB3
     command: 
-      - /var/run/sshd/addusers
+      - /opt/stand/scripts/start.sh
