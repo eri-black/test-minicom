@@ -1,6 +1,6 @@
 FROM ubuntu:18.04
 
-RUN apt update && apt-get install -y openssh-server && apt-get install -y makepasswd
+RUN apt update && apt-get install -y openssh-server && apt-get install -y telnet && apt-get install -y makepasswd
 RUN mkdir /opt/stand   
 RUN sed -i 's/#PasswordAuthentication yes/PasswordAuthentication yes/' /etc/ssh/sshd_config
 RUN service ssh restart

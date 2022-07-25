@@ -7,9 +7,6 @@ cp -f /opt/stand/scripts/motd /etc/motd
 pass=$(makepasswd)
 login=student$(( $RANDOM % 999 + 1 ))
 echo "$(hostname) $login $pass" > /opt/stand/acc/$(hostname).txt
-rm /opt/stand/acc/acc.txt
-cd /opt/stand/acc/
-cat $(ls /opt/stand/acc/) > /opt/stand/acc/acc.txt
 useradd -p $pass -m -s /bin/bash $login
 echo $login:$pass | chpasswd
 
